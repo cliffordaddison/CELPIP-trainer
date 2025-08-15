@@ -1,297 +1,291 @@
-# CELPIP Training App
+# CELPIP Trainer - CLB 10-12 Premium Edition 🚀
 
-A free, comprehensive CELPIP General Training practice platform powered by AI evaluation. Practice speaking, writing, reading, and listening with instant feedback and personalized learning paths.
+> **Zero-dollar starter kit up-scoped to CLB 10–12 rigor with AAA-grade UI/UX**
 
-## 🚀 Features
+A premium CELPIP training application that delivers **CLB 10-12 level content** with **advanced pronunciation analysis**, **3D visualizations**, and **expert-curated materials** - all while maintaining 100% open-source and free-tier deployment.
 
-- **AI-Powered Evaluation**: Get instant feedback on speaking and writing using Groq's advanced language models
-- **Comprehensive Practice**: Cover all four CELPIP skills with realistic exam-style questions
-- **Progress Tracking**: Monitor your improvement with detailed analytics and band predictions
-- **Personalized Learning**: Adaptive practice sessions based on your skill level
-- **Free Speech-to-Text**: Client-side STT using Vosk WASM (no server costs)
-- **PWA Ready**: Install as a mobile app with offline capabilities
-- **100% Free**: No recurring costs, built with free-tier services
+## ✨ Premium Features
 
-## 🏗️ Architecture
+### 🎯 **CLB 10-12 Pedagogical Overhaul**
+- **Speaking**: Prosody engine with stress, intonation, and pace analysis
+- **Listening**: 200-240 WPM audio + mixed accents with note-taking canvas
+- **Reading**: Long-form (800-word) academic texts with rhetorical analysis
+- **Writing**: Collocation checker + discourse parser with Band 10 exemplars
 
-```
-Frontend (Next.js 14) → Supabase Edge Functions → Groq API
-                    ↓
-              Supabase (PostgreSQL + Auth + Storage)
-                    ↓
-              Client-side STT (Vosk WASM)
-```
+### 🎨 **AAA-Grade UI/UX Stack**
+- **3D Visualizations**: React Three Fiber for immersive progress tracking
+- **Premium Motion**: Framer Motion 11 + React Spring for micro-interactions
+- **Audio Analytics**: Real-time pronunciation heatmaps with WaveSurfer.js
+- **Dark/Light Themes**: System preference sync with CSS color-scheme
 
-## 🛠️ Tech Stack
-
-### Frontend
-- **Next.js 14** with App Router
-- **TypeScript** for type safety
-- **Tailwind CSS** + **shadcn/ui** for styling
-- **React Hook Form** + **Zod** for form handling
-- **React Query** for server state management
-- **Zustand** for local state
-
-### Backend
-- **Supabase** (free tier)
-  - PostgreSQL database
-  - Row Level Security (RLS)
-  - Authentication
-  - Storage
-  - Edge Functions (Deno)
-
-### AI & STT
-- **Groq API** for evaluation (free tier)
-- **Vosk WASM** for client-side speech recognition
-- **Faster-whisper** as server-side STT alternative
-
-### Deployment
-- **Vercel** (frontend, free tier)
-- **Supabase** (backend, free tier)
-- **GitHub Actions** (CI/CD)
-
-## 📁 Project Structure
-
-```
-├── src/
-│   ├── app/                 # Next.js App Router pages
-│   ├── components/          # React components
-│   │   ├── ui/             # shadcn/ui components
-│   │   ├── home/           # Home page components
-│   │   ├── dashboard/      # Dashboard components
-│   │   └── layout/         # Layout components
-│   ├── hooks/              # Custom React hooks
-│   └── lib/                # Utility functions
-├── supabase/
-│   └── functions/          # Edge Functions
-│       ├── eval-speaking/  # Speaking evaluation
-│       ├── eval-writing/   # Writing evaluation
-│       ├── eval-reading/   # Reading evaluation
-│       ├── eval-listening/ # Listening evaluation
-│       └── _shared/        # Shared utilities
-├── database/
-│   ├── schema.sql          # Database schema
-│   ├── rls.sql            # Row Level Security policies
-│   └── seed.sql           # Sample data
-└── public/                 # Static assets
-```
+### 🏗️ **High-Band Ready Architecture**
+- **Next.js 14**: App Router, PWA, motion, SSR
+- **Supabase**: Auth, Postgres, Storage (free tier)
+- **Micro-services**: Python prosody analysis on Fly.io (256MB VM)
+- **Edge Functions**: Deno for real-time processing
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Node.js 18+
-- npm or yarn
-- Supabase account
-- Groq API key
-
-### 1. Clone & Install
-
 ```bash
-git clone <repository-url>
-cd celpip-training-app
+# Clone the repository
+git clone https://github.com/cliffordaddison/CELPIP-trainer.git
+cd CELPIP-trainer
+
+# Install dependencies
 npm install
-```
 
-### 2. Environment Setup
-
-Copy `.env.example` to `.env.local` and fill in your values:
-
-```bash
-cp .env.example .env.local
-```
-
-Required environment variables:
-```env
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
-
-# Groq API
-GROQ_API_KEY=your_groq_api_key
-```
-
-### 3. Database Setup
-
-1. Create a new Supabase project
-2. Run the schema and RLS scripts:
-
-```bash
-# In Supabase SQL editor
-\i database/schema.sql
-\i database/rls.sql
-\i database/seed.sql
-```
-
-### 4. Deploy Edge Functions
-
-```bash
-# Install Supabase CLI
-npm install -g supabase
-
-# Login and link project
-supabase login
-supabase link --project-ref your-project-ref
-
-# Deploy functions
-supabase functions deploy eval-speaking
-supabase functions deploy eval-writing
-supabase functions deploy eval-reading
-supabase functions deploy eval-listening
-```
-
-### 5. Run Development Server
-
-```bash
+# Start development server
 npm run dev
+
+# Open http://localhost:3000 → CLB 10+ content unlocked
 ```
 
-Visit `http://localhost:3000` to see your app!
+## 🏗️ Architecture Overview
 
-## 🔧 Development
-
-### Available Scripts
-
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-npm run type-check   # Run TypeScript check
-npm run test         # Run tests
-npm run test:e2e     # Run E2E tests
+```
+┌──────────────────────────┐
+│    Next.js 14 (App)      │ PWA, motion, SSR
+└────┬─────────────────────┘
+     │ (Edge / RSC)
+┌────┴─────────────────────┐
+│ Supabase (free tier)     │ Auth, Postgres, Storage
+└────┬─────────────────────┘
+     │ Deno Edge Functions
+┌────┴─────────────────────┐
+│  Micro-services (Fly.io) │
+│ • Prosody service        │ Python + Parselmouth
+│ • STT (faster-whisper)   │ 256 MB VM
+│ • LLM (vLLM CPU)         │ Llama-3-8B quantized
+└────┬─────────────────────┘
+     │ Optional GPU path
+┌────┴─────────────────────┐
+│ Hugging Face Zero-GPU    │ free inference endpoint
+└──────────────────────────┘
 ```
 
-### Code Quality
+## 🎯 **CLB 10-12 Content Seed**
 
-- **ESLint** + **Prettier** for code formatting
-- **TypeScript** for type safety
-- **Husky** for pre-commit hooks
+The application includes **50 expert-curated prompts** and **50 high-band writing exemplars** covering:
 
-## 🚀 Deployment
+- **Speaking**: Complex debate topics, nuanced reasoning, prosodic stress
+- **Listening**: Academic lectures, business presentations, mixed accents
+- **Reading**: Technical articles, academic texts, argument analysis
+- **Writing**: Academic essays, professional correspondence, discourse structure
 
-### Frontend (Vercel)
+### Example High-Band Prompt
+```json
+{
+  "skill": "speaking",
+  "level": 12,
+  "prompt": "Some people believe that governments should fund space exploration; others argue the money should be spent on urgent Earth-bound issues. State your position with nuanced reasoning and real-world examples. You have 60 seconds.",
+  "transcript_baseline": "While I concede that immediate terrestrial crises demand attention, the long-term dividends of space research—satellite-enabled disaster prediction, asteroid deflection, and technological spillovers—justify sustained public investment.",
+  "rubric_highlights": ["complex clause structures", "idiomatic usage", "prosodic stress on contrastive conjunctions"]
+}
+```
 
-1. Connect your GitHub repository to Vercel
-2. Set environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+## 🔧 **Premium Components**
 
-### Backend (Supabase)
+### 3D Streak Orb (`/components/ui/streak-orb.tsx`)
+```tsx
+<StreakOrb streak={15} />
+```
+- **3D Text Rendering**: Beveled, metallic text with dynamic lighting
+- **Physics Animation**: Floating animation with spring physics
+- **Color Coding**: Band-based color schemes (green for 10+, blue for 7-9, etc.)
 
-1. Edge Functions deploy automatically via GitHub Actions
-2. Database migrations run manually in Supabase dashboard
-3. RLS policies ensure data security
+### Real-time Pronunciation Heatmap (`/components/ui/pronunciation-heatmap.tsx`)
+```tsx
+<PronunciationHeatmap 
+  url="/audio/sample.wav"
+  onAnalysisComplete={handleAnalysis}
+/>
+```
+- **Waveform Visualization**: High-quality audio rendering
+- **Prosody Analysis**: Real-time pitch, intensity, and pace metrics
+- **Band Estimation**: Automatic CELPIP band scoring
 
-## 💰 Cost Analysis
+### CLB 10-12 Dashboard (`/components/dashboard/clb10-dashboard.tsx`)
+```tsx
+<CLB10Dashboard userId="user123" />
+```
+- **Skill Progress Tracking**: Visual progress toward CLB 10-12
+- **Recent Activities**: Expert-level achievement showcase
+- **Weekly Goals**: Gamified learning objectives
 
-### Free Tier Limits
-- **Supabase**: 500MB database, 50MB storage, 2GB bandwidth
-- **Vercel**: 100GB bandwidth, 100 serverless function executions
-- **Groq**: 1000 requests/day (varies by model)
+## 🐍 **Micro-services**
 
-### Cost Optimization
-- Client-side STT eliminates server costs
-- Efficient caching reduces API calls
-- Rate limiting prevents abuse
-
-## 🔒 Security Features
-
-- **Row Level Security (RLS)** on all user data
-- **JWT authentication** via Supabase Auth
-- **Rate limiting** on evaluation endpoints
-- **Input validation** with Zod schemas
-- **CORS protection** on Edge Functions
-
-## 📱 PWA Features
-
-- **Offline support** for core functionality
-- **Install prompt** on supported devices
-- **Service worker** caching
-- **Responsive design** for all screen sizes
-
-## 🧪 Testing
-
-### Unit Tests
+### Prosody Analysis Service (`/prosody/`)
 ```bash
+# Local development
+npm run prosody:dev
+
+# Deploy to Fly.io
+npm run deploy:prosody
+```
+
+**Features:**
+- **Pitch Analysis**: F0 contour, jitter, range analysis
+- **Intensity Metrics**: Volume variation, stress patterns
+- **Speaking Rate**: WPM calculation, pause detection
+- **Band Estimation**: Automatic CELPIP scoring (7-12)
+
+**API Endpoints:**
+- `POST /prosody/analyze` - Single audio analysis
+- `POST /prosody/compare` - Reference vs. student comparison
+
+## 🎨 **Design System**
+
+### Tailwind Configuration (`tailwind.config.ts`)
+```ts
+export default {
+  darkMode: ["class"],
+  theme: {
+    extend: {
+      colors: {
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        card: "hsl(var(--card))",
+        primary: "hsl(var(--primary))",
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+}
+```
+
+### CSS Variables (`/app/globals.css`)
+```css
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --primary: 222.2 47.4% 11.2%;
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --primary: 210 40% 98%;
+}
+```
+
+## 🚀 **Deployment**
+
+### One-Line Commands
+```bash
+# 1. Prosody service (Fly.io)
+cd prosody && flyctl deploy
+
+# 2. Next.js (Vercel)
+vercel --prod
+
+# 3. Database (Supabase)
+supabase start
+```
+
+### Environment Variables
+```env
+# .env.local
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
+PROSODY_SERVICE_URL=https://celpip-prosody.fly.dev
+```
+
+## 💰 **Cost Guardrails**
+
+| Resource | Free Limit | Kill-Switch |
+|----------|------------|-------------|
+| HF Zero-GPU | 30k tokens/day | Fallback to local Llama.cpp |
+| Fly.io VM | 256 MB RAM | Scale to zero when idle |
+| Supabase | 500 MB DB / 2 CPU | Alert at 80% via PostHog |
+
+## 🧪 **Testing**
+
+```bash
+# Run tests
 npm run test
-```
 
-### E2E Tests
-```bash
+# E2E testing
 npm run test:e2e
+
+# Type checking
+npm run type-check
 ```
 
-### Test Coverage
-- Component testing with Vitest
-- E2E testing with Playwright
-- API testing with Edge Function testing
+**Test Coverage:**
+- **Component Tests**: Vitest + React Testing Library
+- **API Tests**: Endpoint validation
+- **E2E Tests**: Playwright for user flows
 
-## 📊 Monitoring & Analytics
+## 📚 **Advanced Usage**
 
-- **Supabase Dashboard** for database metrics
-- **Vercel Analytics** for frontend performance
-- **Custom logging** in Edge Functions
-- **Error tracking** with structured logging
+### Custom CLB Content
+```tsx
+// Add new high-band prompts
+const customPrompt = {
+  skill: "speaking",
+  level: 12,
+  prompt: "Your custom prompt here...",
+  difficulty: "expert",
+  time_limit: 60
+};
+```
 
-## 🔄 CI/CD Pipeline
+### Prosody Analysis Integration
+```tsx
+// Analyze pronunciation
+const response = await fetch('/api/prosody/analyze', {
+  method: 'POST',
+  body: formData
+});
 
-GitHub Actions automatically:
-1. Run tests and type checking
-2. Build the application
-3. Deploy preview builds for PRs
-4. Deploy to production on main branch
+const analysis = response.json();
+// Returns: band_estimate, prosody_score, feedback
+```
 
-## 🚨 Troubleshooting
+### 3D Visualization Customization
+```tsx
+// Customize 3D elements
+<StreakOrb 
+  streak={15}
+  className="custom-3d-styles"
+  material="gold" // Custom material
+  animation="bounce" // Custom animation
+/>
+```
 
-### Common Issues
+## 🤝 **Contributing**
 
-1. **Edge Function deployment fails**
-   - Check Supabase CLI version
-   - Verify project linking
-   - Check environment variables
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
 
-2. **Database connection errors**
-   - Verify RLS policies
-   - Check connection string format
-   - Ensure database is accessible
+### Development Guidelines
+- **TypeScript**: Strict mode enabled
+- **ESLint**: Next.js + TypeScript rules
+- **Prettier**: Consistent code formatting
+- **Testing**: 80%+ coverage required
 
-3. **AI evaluation fails**
-   - Verify Groq API key
-   - Check rate limits
-   - Validate input format
-
-### Getting Help
-
-- Check [Supabase documentation](https://supabase.com/docs)
-- Review [Next.js documentation](https://nextjs.org/docs)
-- Open an issue in this repository
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
+## 📄 **License**
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## 🙏 **Acknowledgments**
 
-- **Supabase** for the excellent backend platform
-- **Groq** for fast AI inference
-- **Vosk** for open-source speech recognition
-- **shadcn/ui** for beautiful UI components
-
-## 📞 Support
-
-For support and questions:
-- Open an issue in this repository
-- Check the documentation
-- Join our community discussions
+- **Radix UI**: Accessible component primitives
+- **Framer Motion**: Premium animations
+- **React Three Fiber**: 3D visualizations
+- **Parselmouth**: Audio analysis engine
+- **Supabase**: Backend-as-a-Service
 
 ---
 
-**Built with ❤️ for the CELPIP community**
+**Enjoy your premium, CLB-10-ready CELPIP training suite—still $0 at hobby scale! 🎉**
+
+> Built with ❤️ for language learners aiming for excellence

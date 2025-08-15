@@ -1,0 +1,108 @@
+[
+  {
+    "skill": "speaking",
+    "level": 12,
+    "prompt": "Some people believe that governments should fund space exploration; others argue the money should be spent on urgent Earth-bound issues. State your position with nuanced reasoning and real-world examples. You have 60 seconds.",
+    "audio_url": "https://cdn.freesound.org/data/previews/612/612095_5674468-lq.mp3",
+    "transcript_baseline": "While I concede that immediate terrestrial crises demand attention, the long-term dividends of space research—satellite-enabled disaster prediction, asteroid deflection, and technological spillovers—justify sustained public investment.",
+    "rubric_highlights": ["complex clause structures", "idiomatic usage", "prosodic stress on contrastive conjunctions"],
+    "difficulty": "expert",
+    "time_limit": 60,
+    "word_count_target": "80-100"
+  },
+  {
+    "skill": "speaking",
+    "level": 11,
+    "prompt": "Discuss the implications of artificial intelligence on employment patterns in the next decade. Consider both displacement and augmentation effects, providing specific industry examples.",
+    "audio_url": "https://cdn.freesound.org/data/previews/612/612096_5674468-lq.mp3",
+    "transcript_baseline": "AI will undoubtedly reshape employment, but rather than wholesale replacement, we'll see augmentation in healthcare, creative industries, and decision-making roles, while routine tasks become automated.",
+    "rubric_highlights": ["academic vocabulary", "balanced perspective", "clear topic development"],
+    "difficulty": "advanced",
+    "time_limit": 60,
+    "word_count_target": "70-90"
+  },
+  {
+    "skill": "listening",
+    "level": 12,
+    "prompt": "Listen to this academic lecture on climate change mitigation strategies. Take notes and answer questions about policy effectiveness and implementation challenges.",
+    "audio_url": "https://cdn.freesound.org/data/previews/612/612097_5674468-lq.mp3",
+    "transcript_baseline": "The lecture discusses carbon pricing mechanisms, renewable energy subsidies, and regulatory frameworks as primary mitigation strategies, with emphasis on political feasibility and economic trade-offs.",
+    "rubric_highlights": ["note-taking efficiency", "comprehension of complex arguments", "identification of key details"],
+    "difficulty": "expert",
+    "time_limit": 180,
+    "word_count_target": "200-240"
+  },
+  {
+    "skill": "reading",
+    "level": 12,
+    "prompt": "Read this 800-word academic text on quantum computing applications in cryptography. Answer questions about technical concepts, implications, and future developments.",
+    "content": "Quantum computing represents a paradigm shift in computational power, leveraging quantum mechanical phenomena like superposition and entanglement to solve problems intractable for classical computers...",
+    "rubric_highlights": ["comprehension of technical concepts", "inference skills", "evaluation of arguments"],
+    "difficulty": "expert",
+    "time_limit": 600,
+    "word_count": 800
+  },
+  {
+    "skill": "writing",
+    "level": 12,
+    "prompt": "Write a 300-word academic essay arguing for or against the proposition that social media platforms should be regulated as public utilities. Support your position with evidence and counterarguments.",
+    "exemplar": "The regulation of social media platforms as public utilities represents a necessary evolution in digital governance, given their fundamental role in modern communication and information dissemination...",
+    "rubric_highlights": ["thesis development", "evidence integration", "counterargument handling", "academic style"],
+    "difficulty": "expert",
+    "time_limit": 1800,
+    "word_count_target": "280-320"
+  },
+  {
+    "skill": "speaking",
+    "level": 10,
+    "prompt": "Explain the concept of sustainable development and how it applies to urban planning. Provide specific examples of sustainable practices in modern cities.",
+    "audio_url": "https://cdn.freesound.org/data/previews/612/612098_5674468-lq.mp3",
+    "transcript_baseline": "Sustainable development balances economic growth with environmental protection and social equity. In urban planning, this means green building standards, efficient public transport, and community engagement in development decisions.",
+    "rubric_highlights": ["clear definition", "concrete examples", "logical organization"],
+    "difficulty": "advanced",
+    "time_limit": 60,
+    "word_count_target": "60-80"
+  },
+  {
+    "skill": "listening",
+    "level": 11,
+    "prompt": "Listen to a business presentation on digital transformation strategies. Identify key challenges, opportunities, and implementation approaches mentioned.",
+    "audio_url": "https://cdn.freesound.org/data/previews/612/612099_5674468-lq.mp3",
+    "transcript_baseline": "The presentation outlines three main challenges: legacy system integration, change management resistance, and skill gaps. Opportunities include improved efficiency, customer experience, and competitive advantage.",
+    "rubric_highlights": ["main idea identification", "detail retention", "inference skills"],
+    "difficulty": "advanced",
+    "time_limit": 150,
+    "word_count_target": "180-220"
+  },
+  {
+    "skill": "reading",
+    "level": 11,
+    "prompt": "Read this 600-word article on renewable energy economics. Analyze the cost-benefit analysis presented and evaluate the author's conclusions.",
+    "content": "The economics of renewable energy have shifted dramatically in the past decade, with solar and wind power now competitive with fossil fuels in many markets...",
+    "rubric_highlights": ["argument analysis", "evidence evaluation", "critical thinking"],
+    "difficulty": "advanced",
+    "time_limit": 450,
+    "word_count": 600
+  },
+  {
+    "skill": "writing",
+    "level": 11,
+    "prompt": "Write a 250-word response to a customer complaint about a delayed delivery. Maintain professionalism while addressing concerns and offering solutions.",
+    "exemplar": "Dear [Customer Name], I sincerely apologize for the inconvenience caused by the delayed delivery of your order...",
+    "rubric_highlights": ["professional tone", "problem acknowledgment", "solution offering", "closing appropriately"],
+    "difficulty": "advanced",
+    "time_limit": 1200,
+    "word_count_target": "230-270"
+  },
+  {
+    "skill": "speaking",
+    "level": 10,
+    "prompt": "Describe a significant technological advancement from the past decade and explain its impact on society. Use specific examples to illustrate your points.",
+    "audio_url": "https://cdn.freesound.org/data/previews/612/612100_5674468-lq.mp3",
+    "transcript_baseline": "Smartphone technology has revolutionized communication, commerce, and information access. Mobile banking, ride-sharing apps, and social media have transformed how we interact and conduct daily activities.",
+    "rubric_highlights": ["clear description", "impact analysis", "specific examples"],
+    "difficulty": "intermediate",
+    "time_limit": 60,
+    "word_count_target": "50-70"
+  }
+]
